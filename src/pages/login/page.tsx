@@ -7,15 +7,15 @@ import { checkAuthenticated } from '~/entities/session'
 import { authenticationWithGithubFx, githubAuthClicked } from '~/features/auth/auth-by-github'
 import { authenticationWithGoogleFx, googleAuthClicked } from '~/features/auth/auth-by-google'
 import { authenticationWithTwitterFx, twitterAuthClicked } from '~/features/auth/auth-by-twitter'
-import { WorkspacePage } from '~/pages/workspace'
 import { ButtonControl, PageContentCentred } from '~/shared/ui'
+import { workspaceRoute } from '../workspace/route'
 import { loginRoute } from './route'
 import { Header } from './ui'
 
 checkAuthenticated({
   when: loginRoute.opened,
   if: 'authorized',
-  then: WorkspacePage.workspaceRoute.open,
+  then: workspaceRoute.open,
 })
 
 sample({
@@ -24,7 +24,7 @@ sample({
     authenticationWithTwitterFx.done,
     authenticationWithGoogleFx.done,
   ],
-  target: WorkspacePage.workspaceRoute.open,
+  target: workspaceRoute.open,
 })
 
 export const Login = () => {

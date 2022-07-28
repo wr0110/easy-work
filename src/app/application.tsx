@@ -4,11 +4,12 @@ import { useStore } from 'effector-react'
 import 'keen-slider/keen-slider.min.css'
 import { useEffect } from 'react'
 import { $theme } from '~/features/theme'
+import { Pages } from '~/pages'
 import { initFirebase } from '~/shared/config/init-firebase'
 import { appStarted } from '~/shared/config/run-logic'
 import { ToastProvider } from '~/shared/lib/toast'
 import { config } from './firebase-config'
-import { Pages, router } from './routing'
+import { router } from './routing'
 
 initFirebase({
   config,
