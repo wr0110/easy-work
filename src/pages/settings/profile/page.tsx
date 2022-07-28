@@ -2,7 +2,7 @@ import { Button, Drawer, GeistUIThemes, useMediaQuery, useTheme } from '@geist-u
 import { Menu } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
 import { useStore } from 'effector-react'
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { checkAuthenticated, redirectSessionFailure } from '~/entities/session'
 import { $theme } from '~/features/theme'
 import { userEditRoute } from '~/features/user/edit'

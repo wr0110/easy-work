@@ -1,7 +1,6 @@
 import { Text, GeistUIThemes, useTheme } from '@geist-ui/core'
 import { Moon, Sun } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
-import React from 'react'
 import { themeToggled } from '../../model'
 
 export const SwitchTheme = () => {

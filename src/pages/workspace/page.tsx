@@ -1,6 +1,5 @@
 import { reflect } from '@effector/reflect'
 import { Grid, Tabs, Text } from '@geist-ui/core'
-import React from 'react'
 import { $activeProjects, $finishedProjects } from '~/entities/project'
 import { ProjectList } from '~/entities/project/ui'
 import { $favoritesProjects } from '~/features/project/favorite'

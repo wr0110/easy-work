@@ -1,6 +1,5 @@
 import { Textarea } from '@geist-ui/core'
 import { useStore } from 'effector-react'
-import React from 'react'
 import { $description, descriptionChanged } from '~/entities/task'
 
 export const DescriptionField = () => {

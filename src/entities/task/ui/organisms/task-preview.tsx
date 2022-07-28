@@ -1,7 +1,7 @@
 import { Badge, Button, Card, Popover, Text, useMediaQuery } from '@geist-ui/core'
 import { Copy, Edit2, Link, MoreHorizontal, Trash2 } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
-import React, { forwardRef, useState } from 'react'
+import { forwardRef, useState } from 'react'
 import { taskRemove } from '~/entities/task'
 import { Dropdown } from '~/shared/ui/molecules'
 

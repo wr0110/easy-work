@@ -19,6 +19,7 @@
   "rules": {
     "@typescript-eslint/no-unnecessary-condition": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
-    "unicorn/prevent-abbreviations": "off"
+    "unicorn/prevent-abbreviations": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

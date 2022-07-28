@@ -1,7 +1,6 @@
 import { variant } from '@effector/reflect'
 import { Loading, Modal, Spacer } from '@geist-ui/core'
 import { useStore } from 'effector-react'
-import React from 'react'
 import { $isOpenForm, hideTaskForm, taskSave } from '~/entities/task'
 import { Create, DescriptionField, TitleField } from '~/entities/task/ui'
 import { BoardsBaseStructs } from '~/features/task/control-task-lifecycle/ui'

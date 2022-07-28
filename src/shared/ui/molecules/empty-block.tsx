@@ -1,6 +1,6 @@
 import { Text } from '@geist-ui/core'
 import { styled } from '@linaria/react'
-import React, { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 
 interface Props {
   title: string

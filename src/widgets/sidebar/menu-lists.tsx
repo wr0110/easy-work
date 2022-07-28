@@ -1,5 +1,4 @@
 import { Monitor, User } from '@geist-ui/icons'
-import React from 'react'
 import { paths } from '~/shared/lib/paths'
 
 export const menuSettings = [

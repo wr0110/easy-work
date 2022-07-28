@@ -1,6 +1,5 @@
 import { Button, useMediaQuery } from '@geist-ui/core'
 import { Plus } from '@geist-ui/icons'
-import React from 'react'
 import { showCreationForm } from '../../index'
 
 export const CreateProject = () => {

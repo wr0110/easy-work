@@ -1,5 +1,5 @@
 import { useStore } from 'effector-react'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { $isAuthenticated } from '../../model'
 
 interface Props {

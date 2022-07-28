@@ -1,6 +1,5 @@
 import { Button, Divider, Spacer, Text } from '@geist-ui/core'
 import { useStore } from 'effector-react'
-import React from 'react'
 import {
   $email,
   $fullname,

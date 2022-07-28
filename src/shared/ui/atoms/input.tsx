@@ -1,12 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Dot, Input, Text } from '@geist-ui/core'
-import React, {
-  EventHandler,
-  InputHTMLAttributes,
-  ReactNode,
-  SyntheticEvent,
-  useState,
-} from 'react'
+import { EventHandler, InputHTMLAttributes, ReactNode, SyntheticEvent, useState } from 'react'
 
 type BaseInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'value'>
 

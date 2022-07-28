@@ -1,6 +1,6 @@
 import { Avatar } from '@geist-ui/core'
 import { styled } from '@linaria/react'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import type { User } from '~/shared/api/requests'
 
 interface Props {

@@ -1,6 +1,5 @@
 import { Link, Text, useTheme } from '@geist-ui/core'
 import { styled } from '@linaria/react'
-import React from 'react'
 import { ThemeChoice } from '~/features/theme/ui'
 
 export const Header = () => {

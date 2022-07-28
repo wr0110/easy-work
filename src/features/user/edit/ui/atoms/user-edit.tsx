@@ -1,7 +1,6 @@
 import { Settings } from '@geist-ui/icons'
 import { css } from '@linaria/core'
 import { Link } from 'atomic-router-react'
-import React from 'react'
 import { userEditRoute } from '~/features/user/edit'
 
 export const UserEdit = () => {

@@ -1,6 +1,5 @@
 import { Button, Grid, Link, Text } from '@geist-ui/core'
 import { styled } from '@linaria/react'
-import React from 'react'
 import { BaseTemplate } from '~/shared/ui'
 
 export const NotFound = () => {

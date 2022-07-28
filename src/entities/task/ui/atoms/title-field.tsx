@@ -1,6 +1,5 @@
 import { Input } from '@geist-ui/core'
 import { useStore } from 'effector-react'
-import React from 'react'
 import { $title, titleChanged } from '~/entities/task'
 
 export const TitleField = () => {

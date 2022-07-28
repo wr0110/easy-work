@@ -1,7 +1,7 @@
 import { Card, Text, Image, useTheme } from '@geist-ui/core'
 import { styled } from '@linaria/react'
 import { Link } from 'atomic-router-react'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import type { Project } from '~/shared/api/requests'
 import { paths } from '~/shared/lib/paths'
 

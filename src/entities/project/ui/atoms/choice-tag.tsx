@@ -1,5 +1,4 @@
 import { Select } from '@geist-ui/core'
-import React from 'react'
 
 export const ChoiceTag = () => {
   return (

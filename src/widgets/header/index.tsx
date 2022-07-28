@@ -1,7 +1,7 @@
 import { Grid, Popover, Text, useTheme } from '@geist-ui/core'
 import { styled } from '@linaria/react'
 import { useStore } from 'effector-react'
-import React, { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import { $isOpenDraftProject, hideCreationForm } from '~/entities/project'
 import { ProjectCreationForm, CreateProject } from '~/entities/project/ui'
 import { $currentUser } from '~/entities/session'

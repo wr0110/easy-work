@@ -1,6 +1,6 @@
 import { Dot, Text, Textarea } from '@geist-ui/core'
 import { useStore } from 'effector-react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { description } from '../..'
 
 export const DescriptionField = () => {

@@ -1,5 +1,4 @@
 import { styled } from '@linaria/react'
-import React from 'react'
 
 const DividerContainer = styled.div`
   padding: 5px 0;

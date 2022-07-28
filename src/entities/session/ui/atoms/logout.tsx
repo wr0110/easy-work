@@ -3,7 +3,6 @@ import { LogOut } from '@geist-ui/icons'
 import { css } from '@linaria/core'
 import { Link } from 'atomic-router-react'
 import { createEvent, sample } from 'effector'
-import React from 'react'
 import { paths } from '~/shared/lib/paths'
 import { logout } from '../../model'
 

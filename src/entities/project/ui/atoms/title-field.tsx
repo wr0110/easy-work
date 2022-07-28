@@ -1,5 +1,4 @@
 import { useStore } from 'effector-react'
-import React from 'react'
 import { TextField } from '~/shared/ui/atoms/input'
 import { title } from '../../index'
 

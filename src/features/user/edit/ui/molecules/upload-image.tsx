@@ -1,5 +1,5 @@
 import { Avatar, Tooltip } from '@geist-ui/core'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { DropzoneOptions, useDropzone } from 'react-dropzone'
 
 interface Props {

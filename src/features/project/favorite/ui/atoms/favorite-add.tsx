@@ -1,7 +1,7 @@
 import { Button } from '@geist-ui/core'
 import { Star } from '@geist-ui/icons'
 import { useStore, useStoreMap } from 'effector-react'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { $isDark } from '~/features/theme'
 import { $favoritesIds, favoriteAdd, favoriteRemove } from '../../model'
 

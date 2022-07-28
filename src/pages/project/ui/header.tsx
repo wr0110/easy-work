@@ -10,7 +10,7 @@ import {
 import { Edit, Menu } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
 import { useStore } from 'effector-react'
-import React, { FC, useCallback, useState } from 'react'
+import { FC, useCallback, useState } from 'react'
 import { $currentUser } from '~/entities/session'
 import { showTaskForm } from '~/entities/task'
 import { FavoriteAdd } from '~/features/project/favorite/ui'

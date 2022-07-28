@@ -1,7 +1,7 @@
 import { KeyCode, KeyMod, useKeyboard, Input, useMediaQuery } from '@geist-ui/core'
 import { Search } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
-import React, { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import { addFieldRef, focusSearchField } from '../..'
 
 export const SearchBar = ({ className }: { className?: string }) => {

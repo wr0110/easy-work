@@ -1,5 +1,5 @@
 import { Button, ButtonProps } from '@geist-ui/core'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 interface Props {
   icon?: ReactNode

@@ -1,5 +1,5 @@
 import { Input } from '@geist-ui/core'
-import React, { ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 
 interface Props {
   label: string

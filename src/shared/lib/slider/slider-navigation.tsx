@@ -2,7 +2,6 @@ import { ChevronLeft, ChevronRight } from '@geist-ui/icons'
 import { css } from '@linaria/core'
 import { KeenSliderHooks } from 'keen-slider'
 import { KeenSliderInstance } from 'keen-slider/react'
-import React from 'react'
 
 type SliderInstance = KeenSliderInstance<unknown, unknown, KeenSliderHooks>
 

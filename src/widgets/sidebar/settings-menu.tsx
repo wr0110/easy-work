@@ -4,7 +4,6 @@ import { styled } from '@linaria/react'
 import { Link } from 'atomic-router-react'
 import { createStore } from 'effector'
 import { useList } from 'effector-react'
-import React from 'react'
 import { Theme } from '~/features/theme'
 import { menuSettings } from './menu-lists'
 

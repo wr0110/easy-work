@@ -1,6 +1,6 @@
 import { useTheme } from '@geist-ui/core'
 import { styled } from '@linaria/react'
-import React, { CSSProperties, FC } from 'react'
+import { CSSProperties, FC } from 'react'
 import { DropzoneOptions, useDropzone } from 'react-dropzone'
 
 interface Props {

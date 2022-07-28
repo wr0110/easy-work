@@ -1,7 +1,6 @@
 import { createHistoryRouter } from 'atomic-router'
 import { Route } from 'atomic-router-react'
 import { sample } from 'effector'
-import React from 'react'
 import { redirectSessionFailure } from '~/entities/session'
 import { userEditRoute } from '~/features/user/edit'
 import { ProjectPage, WorkspacePage, LoginPage, NotFoundPage, SettingsPage } from '~/pages'

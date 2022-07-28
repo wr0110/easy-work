@@ -1,6 +1,6 @@
 import { Loading } from '@geist-ui/core'
 import { styled } from '@linaria/react'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import type { Project } from '~/shared/api/requests'
 import { PaperSlide } from '~/shared/lib/slider'
 import { EmptyBlock } from '~/shared/ui'

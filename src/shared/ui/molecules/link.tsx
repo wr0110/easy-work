@@ -1,7 +1,7 @@
 import { css } from '@linaria/core'
 import { styled } from '@linaria/react'
 import { Link } from 'atomic-router-react'
-import React, { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import type { GetProps } from '~/shared/lib/get-props'
 
 interface PropsBase {
