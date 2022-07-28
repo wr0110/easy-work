@@ -11,9 +11,10 @@ module.exports = {
     path: config.build,
   },
   optimization: {
-    moduleIds: 'deterministic',
     runtimeChunk: 'single',
+
     splitChunks: {
+      minChunks: 2,
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
