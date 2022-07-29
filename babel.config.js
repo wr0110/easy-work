@@ -43,23 +43,25 @@ module.exports = function (api) {
           return pathByLib(name)
         },
       },
+      'geist-icons',
     ])
   }
 
   if (isTests) {
-    plugins.push([
-      'effector/babel-plugin',
-      '@babel/plugin-transform-runtime',
-      '@babel/plugin-transform-modules-commonjs',
-      [
-        'module-resolver',
-        {
-          alias: {
-            '~': './src',
+    plugins.push(
+      ...[
+        '@babel/plugin-transform-runtime',
+        '@babel/plugin-transform-modules-commonjs',
+        [
+          'module-resolver',
+          {
+            alias: {
+              '~': './src',
+            },
           },
-        },
-      ],
-    ])
+        ],
+      ]
+    )
   }
 
   return {
