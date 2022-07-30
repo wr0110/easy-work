@@ -7,7 +7,7 @@ pre-commit:
     linter:
       files: git diff --name-only @{push}
       glob: '*.{js,ts,jsx,tsx}'
-      run: eslint --fix {staged_files}
+      run: eslint --fix --max-warnings 1 {staged_files}
 
 commit-msg:
   scripts:
