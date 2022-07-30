@@ -1,4 +1,5 @@
 import { Card, Text, Image, useTheme } from '@geist-ui/core'
+import { css } from '@linaria/core'
 import { styled } from '@linaria/react'
 import { Link } from 'atomic-router-react'
 import { FC } from 'react'
@@ -14,7 +15,7 @@ export const ProjectPreview: FC<Props> = ({ project, className }) => {
   const { type } = useTheme()
 
   return (
-    <CardStyled data-theme={type} width="300px" shadow padding={0}>
+    <Card className={cardClasses} data-theme={type} width="300px" shadow padding={0}>
       <Link className={className} to={paths.project(project.projectID)}>
         <Image width="300px" height="200px" src={project.photoUrl} alt="project preview" />
         <GroupBody>
@@ -26,11 +27,11 @@ export const ProjectPreview: FC<Props> = ({ project, className }) => {
           </Text>
         </GroupBody>
       </Link>
-    </CardStyled>
+    </Card>
   )
 }
 
-const CardStyled = styled(Card)`
+const cardClasses = css`
   & .content {
     padding: 0 !important;
   }

@@ -8,6 +8,7 @@ import {
   useTheme,
 } from '@geist-ui/core'
 import { Edit, Menu } from '@geist-ui/icons'
+import { css } from '@linaria/core'
 import { styled } from '@linaria/react'
 import { useStore } from 'effector-react'
 import { FC, useCallback, useState } from 'react'
@@ -16,7 +17,7 @@ import { showTaskForm } from '~/entities/task'
 import { FavoriteAdd } from '~/features/project/favorite/ui'
 import { projectRoute } from '../route'
 
-const ButtonStyled = styled(Button)`
+const buttonClasses = css`
   z-index: 1500;
 
   position: fixed;
@@ -36,7 +37,16 @@ export const Header = () => {
 
   return (
     <Container theme={theme}>
-      {mdDown && <ButtonStyled type="abort" auto scale={0.8} icon={<Menu />} onClick={toggle} />}
+      {mdDown && (
+        <Button
+          auto
+          type="abort"
+          className={buttonClasses}
+          scale={0.8}
+          icon={<Menu />}
+          onClick={toggle}
+        />
+      )}
       <Text mr={0.4}>Board</Text>
       <FavoriteAdd projectID={params.id} />
       <Sidebar isOpen={isOpen} onClose={close} />
@@ -68,7 +78,9 @@ const Sidebar: FC<{ isOpen: boolean; onClose(): void }> = ({ isOpen, onClose }) 
       <Drawer.Content pb={0.6}>
         <UserPanel>
           <Avatar mr={0.4} text="MI" isSquare />
-          <ProjectTitle font="14px">Mirio</ProjectTitle>
+          <Text className={projectTitleClasses} font="14px">
+            Mirio
+          </Text>
           <Avatar src={viewer?.photoUrl} />
         </UserPanel>
         <Button
@@ -95,6 +107,6 @@ const UserPanel = styled.div`
   margin-bottom: 0.6rem;
 `
 
-const ProjectTitle = styled(Text)`
+const projectTitleClasses = css`
   flex: 1 0 auto;
 `

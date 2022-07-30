@@ -12,7 +12,6 @@ import { SortableContext, useSortable, verticalListSortingStrategy } from '@dnd-
 import { CSS } from '@dnd-kit/utilities'
 import { Grid, Spacer } from '@geist-ui/core'
 import { css } from '@linaria/core'
-import { styled } from '@linaria/react'
 import { useStore, useStoreMap } from 'effector-react'
 import { CSSProperties, FC, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
@@ -114,12 +113,13 @@ export const TaskDraggable: FC<{ taskId: string }> = ({ taskId }) => {
 
   return (
     <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
-      <TaskPreviewStyled
+      <TaskPreview
         taskId={taskId}
         key={taskId}
         title={task.title}
         description={task.description}
         labels={task.labels}
+        className={taskPreviewClasses}
       />
     </div>
   )
@@ -147,6 +147,6 @@ export const Overlay: FC = () => {
   )
 }
 
-const TaskPreviewStyled = styled(TaskPreview)`
+const taskPreviewClasses = css`
   margin: 1rem 0 2rem 0 !important;
 `

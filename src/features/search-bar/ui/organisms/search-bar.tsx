@@ -1,4 +1,4 @@
-import { KeyCode, KeyMod, useKeyboard, Input, useMediaQuery } from '@geist-ui/core'
+import { KeyCode, KeyMod, useKeyboard, Input, useMediaQuery } from '@geist-ui/core/esm'
 import { Search } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
 import { useLayoutEffect, useRef } from 'react'

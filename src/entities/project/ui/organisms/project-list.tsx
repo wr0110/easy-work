@@ -1,5 +1,5 @@
 import { Loading } from '@geist-ui/core'
-import { styled } from '@linaria/react'
+import { css } from '@linaria/core'
 import { FC } from 'react'
 import type { Project } from '~/shared/api/requests'
 import { PaperSlide } from '~/shared/lib/slider'
@@ -24,15 +24,15 @@ export const ProjectList: FC<Props> = ({ projects, loading }) => {
   return (
     <ProjectsCarousel navigation={projects.length > 4}>
       {projects.map((project) => (
-        <PaperSlideStyled key={project.projectID}>
+        <PaperSlide className={paperSlideClasses} key={project.projectID}>
           <ProjectPreview project={project} />
-        </PaperSlideStyled>
+        </PaperSlide>
       ))}
     </ProjectsCarousel>
   )
 }
 
-const PaperSlideStyled = styled(PaperSlide)`
+const paperSlideClasses = css`
   padding: 1.5rem 0 4rem 0;
 
   display: flex;

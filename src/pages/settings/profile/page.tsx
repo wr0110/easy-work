@@ -50,7 +50,7 @@ export const HeaderBar = () => {
   return (
     <Header theme={theme}>
       <HeaderContainer>
-        <ButtonStyled icon={<Menu size={25} />} type="abort" auto onClick={toggle} />
+        <Button icon={<Menu size={25} />} type="abort" auto onClick={toggle} />
       </HeaderContainer>
       <Drawer width="75%" visible={visible} onClose={hide} placement="left">
         <Drawer.Content>
@@ -128,5 +128,3 @@ const HeaderContainer = styled.div`
 
   padding-left: 0.7rem;
 `
-
-const ButtonStyled = styled(Button)``

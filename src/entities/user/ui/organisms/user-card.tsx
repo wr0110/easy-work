@@ -1,5 +1,5 @@
 import { Avatar } from '@geist-ui/core'
-import { styled } from '@linaria/react'
+import { css } from '@linaria/core'
 import { FC } from 'react'
 import type { User } from '~/shared/api/requests'
 
@@ -9,23 +9,31 @@ interface Props {
 }
 
 export const UserCard: FC<Props> = ({ user, className }) => {
-  if (user === null) {
-    return <AvatarStyled isSquare text="NN" className={className} width={1.38} height={1.38} />
+  if (!user) {
+    return (
+      <Avatar
+        isSquare
+        text="NN"
+        className={`${avatarClasses} ${className}`}
+        width={1.38}
+        height={1.38}
+      />
+    )
   }
 
   const fallback = user.fullname.charAt(0).toUpperCase()
   return (
-    <AvatarStyled
+    <Avatar
       isSquare
       text={fallback}
       width={1.38}
       height={1.38}
-      className={className}
+      className={`${avatarClasses} ${className}`}
       src={user.photoUrl}
     />
   )
 }
 
-const AvatarStyled = styled(Avatar)`
+const avatarClasses = css`
   cursor: pointer;
 `
