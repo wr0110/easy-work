@@ -25,7 +25,7 @@ module.exports = function (api) {
         libraryName: '@geist-ui/icons',
         libraryDirectory: '',
         customName: (name) => {
-          const pathByLib = (name) => `@geist-ui/icons/${name}`
+          const pathToLib = (name) => `@geist-ui/icons/${name}`
           const parseToCamelCase = (word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`
 
           const separator = '-'
@@ -37,10 +37,10 @@ module.exports = function (api) {
 
             const finallyIconName = words[0] + iconsWithDashed.join('')
 
-            return pathByLib(finallyIconName)
+            return pathToLib(finallyIconName)
           }
 
-          return pathByLib(name)
+          return pathToLib(name)
         },
       },
       'geist-icons',
