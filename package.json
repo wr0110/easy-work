@@ -11,7 +11,7 @@
     "format": "prettier --write \"./src/**/**.{ts,tsx,js,jsx,json}\"",
     "commit": "git-cz",
     "test": "jest",
-    "jest-clear": "jest --clearCache",
+    "test:clear": "jest --clearCache",
     "deps": "madge --circular ./src/index.tsx"
   },
   "dependencies": {
