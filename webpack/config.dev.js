@@ -10,7 +10,7 @@ module.exports = {
     filename: config.outputDev.js,
     path: config.build,
   },
-  devtool: 'eval-cheap-module-source-map',
+  devtool: 'inline-source-map',
   devServer: {
     hot: true,
     port: 8000,
