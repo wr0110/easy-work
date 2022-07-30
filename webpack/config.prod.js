@@ -9,6 +9,7 @@ module.exports = {
     publicPath: '/',
     filename: config.outputProd.js,
     path: config.build,
+    clean: true,
   },
   optimization: {
     runtimeChunk: 'single',
