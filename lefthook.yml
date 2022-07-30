@@ -1,0 +1,15 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: '*.{ts,js,tsx}'
+      run: prettier --write {staged_files}
+    linter:
+      files: git diff --name-only @{push}
+      glob: '*.{js,ts,jsx,tsx}'
+      run: eslint --fix --max-warnings 1 {staged_files}
+
+commit-msg:
+  scripts:
+    'commit_check':
+      runner: bash

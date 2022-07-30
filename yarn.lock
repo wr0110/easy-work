@@ -7073,11 +7073,6 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
-  integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
-
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
@@ -8417,6 +8412,48 @@ lazystream@^1.0.0:
   integrity sha512-b94GiNHQNy6JNTrt5w6zNyffMrNkXZb3KTkCZJb2V1xaEGCk093vkZ2jk3tpaeP33/OiXC+WvK9AxUebnf5nbw==
   dependencies:
     readable-stream "^2.0.5"
+
+lefthook-darwin-arm64@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/lefthook-darwin-arm64/-/lefthook-darwin-arm64-1.0.5.tgz#d8da802cfb7c46691adb1ac3be90ac198a87ee37"
+  integrity sha512-YdInyAo5ziagvLfXqK6FYIv/pe3r/cjMVDy2qkP9Z8c+FDitKbC2O7zaWfxKF0CHK/KHKP9bM2Xncl24sHO39A==
+
+lefthook-darwin-x64@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/lefthook-darwin-x64/-/lefthook-darwin-x64-1.0.5.tgz#09734a9d79d5a93be2fdf5570eb3496b7306fe80"
+  integrity sha512-zzdllHq4hUHafwUgLOsOijPjWbP24TykONyaCFw/49PSxUZQ6Nb0HF4wIF7z/pebLNl8wzshM0jK3LyMj4TBzA==
+
+lefthook-linux-arm64@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/lefthook-linux-arm64/-/lefthook-linux-arm64-1.0.5.tgz#6a9c7e7e1499ed3aa361536c122e1d6ffd40f714"
+  integrity sha512-CP6Qicq372WbAQ+s+A7+6lkA5UAplBDyfZ/quih6lLu8bWDZl9TrPO5BwkAwByS2ra2dry5lNK4r5Q5F5z6aog==
+
+lefthook-linux-x64@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/lefthook-linux-x64/-/lefthook-linux-x64-1.0.5.tgz#6fe08094c213bbcbe100ed7efdb24b5a2a1e9048"
+  integrity sha512-EPK09TUtktSFVERqWCg+vE41mLAK4bpO41o5NbOm/aifg1Usk6wG30i5Oh1fw+affuAMDAoPKNKHRP1EzTTh7Q==
+
+lefthook-windows-arm64@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/lefthook-windows-arm64/-/lefthook-windows-arm64-1.0.5.tgz#cda0483443d2a40ddb13fa9edec083ffa4fa8979"
+  integrity sha512-9gyvUxXF3ItmhdchB+Feby2Vq2lU3j5q6qD82ePoW4R16nXj2Zo9bvnCsMVXsVYAuCOAUEO1lw/EtVIsOCm35g==
+
+lefthook-windows-x64@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/lefthook-windows-x64/-/lefthook-windows-x64-1.0.5.tgz#653bfa4f1edcbe7ab7e2c85f55a2dd599eac0223"
+  integrity sha512-s0vmMuBUhkLlZeKX4N+lUVMxvinKOxFESUZQ0RQ5akd8S9gYEzY+mXbmGE0VudpkiuRZFWitqdcuLKG7FLXFVw==
+
+lefthook@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/lefthook/-/lefthook-1.0.5.tgz#5f3562ae3f5be9aba23a394c38c58ba37202bb51"
+  integrity sha512-P88yhltUgNRLhIhHZhn9oyt6aXmN3COIcWZMUHoS7qlkJcPtT05ad9QVhGKhrCrzST0PM5EY6ccxU/tQOd91NQ==
+  optionalDependencies:
+    lefthook-darwin-arm64 "1.0.5"
+    lefthook-darwin-x64 "1.0.5"
+    lefthook-linux-arm64 "1.0.5"
+    lefthook-linux-x64 "1.0.5"
+    lefthook-windows-arm64 "1.0.5"
+    lefthook-windows-x64 "1.0.5"
 
 leven@^3.1.0:
   version "3.1.0"
