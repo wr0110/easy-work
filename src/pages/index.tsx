@@ -1,13 +1,13 @@
-import { lazy, Suspense } from 'react'
-
-export const Routes = lazy(() =>
-  import('./routes-list').then((module) => ({ default: module.Routes }))
-)
+import { Route } from 'atomic-router-react'
+import { routes } from './routes-list'
 
 export const Pages = () => {
   return (
-    <Suspense fallback={<div>loading...</div>}>
-      <Routes />
-    </Suspense>
+    <>
+      {routes.map((config, idx) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <Route key={idx} route={config.route} view={config.view} />
+      ))}
+    </>
   )
 }

@@ -1,4 +1,3 @@
-import { Route } from 'atomic-router-react'
 import { userEditRoute } from '~/features/user/edit'
 import { paths } from '~/shared/lib/paths'
 import { NotFound } from './error-not-found/page'
@@ -18,14 +17,3 @@ export const routes = [
   { path: paths.notFound(), route: notFoundRoute, view: NotFound },
   { path: paths.userEdit(), route: userEditRoute, view: Settings },
 ]
-
-export const Routes = () => {
-  return (
-    <>
-      {routes.map((config, idx) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <Route key={idx} route={config.route} view={config.view} />
-      ))}
-    </>
-  )
-}
