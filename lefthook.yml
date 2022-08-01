@@ -11,5 +11,5 @@ pre-commit:
 
 commit-msg:
   scripts:
-    'commit_check':
+    'commit-msg':
       runner: bash
