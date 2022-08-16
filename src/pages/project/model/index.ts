@@ -1,6 +1,6 @@
 import { sample } from 'effector'
 import { pending } from 'patronum'
-import { checkAuthenticated, redirectSessionFailure } from '~/entities/session'
+import { anonymousChain, authorizedChain } from '~/entities/session/hooks'
 import {
   addTaskFx,
   addTaskToLifecycleFx,
@@ -13,23 +13,22 @@ import { routes } from '~/shared/routes'
 
 export const $pending = pending({ effects: [loadTasksLifecycleFx] })
 
-checkAuthenticated({
-  when: routes.project.opened,
-  if: 'anonymous',
-  then: redirectSessionFailure,
-})
+export const anonymousRoute = anonymousChain(routes.project)
+export const authenticatedRoute = authorizedChain(routes.project)
 
 sample({
-  clock: routes.project.opened,
-  filter: routes.project.$isOpened,
+  clock: authenticatedRoute.opened,
+  filter: authenticatedRoute.$isOpened,
   fn: (route) => ({ projectID: route.params.id }),
   target: [loadTasksLifecycleFx, loadTasksFx, loadFavoritesProjectsFx],
 })
 
 sample({
   clock: addTaskFx.doneData,
-  source: routes.project.$params,
+  source: authenticatedRoute.$params,
   filter: Boolean,
   fn: (params, taskId) => ({ projectID: params.id, status: 'idle' as Status, taskId }),
   target: addTaskToLifecycleFx,
 })
+
+sample({ clock: anonymousRoute.opened, target: routes.login.open })

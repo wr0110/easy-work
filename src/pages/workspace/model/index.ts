@@ -1,14 +1,11 @@
 import { sample } from 'effector'
 import { every } from 'patronum'
-import { redirectSessionFailure, checkAuthenticated } from '~/entities/session'
+import { anonymousChain, authorizedChain } from '~/entities/session/hooks'
 import { loadFavoritesProjectsFx, loadProjectsFx } from '~/shared/api/requests'
 import { routes } from '~/shared/routes'
 
-checkAuthenticated({
-  when: routes.workspace.opened,
-  if: 'anonymous',
-  then: redirectSessionFailure,
-})
+export const anonymousRoute = anonymousChain(routes.workspace)
+export const authenticatedRoute = authorizedChain(routes.workspace)
 
 export const $pending = every({
   stores: [loadProjectsFx.pending, loadFavoritesProjectsFx.pending],
@@ -20,3 +17,5 @@ sample({
   filter: routes.workspace.$isOpened,
   target: [loadProjectsFx, loadFavoritesProjectsFx],
 })
+
+sample({ clock: anonymousRoute.opened, target: routes.login.open })

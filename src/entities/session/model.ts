@@ -1,4 +1,5 @@
-import { createEffect, createEvent, createStore, sample, Unit } from 'effector'
+import { redirect } from 'atomic-router'
+import { createEffect, createEvent, createStore, sample, split } from 'effector'
 import { persist } from 'effector-storage/local'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import type { User as FirebaseUser } from 'firebase/auth'
@@ -7,61 +8,44 @@ import { setUidForRequest } from '~/shared/api/requests/request'
 import { appStarted } from '~/shared/config/run-logic'
 import { routes } from '~/shared/routes'
 
-export const redirectSessionFailure = createEvent()
-
-export const sessionUpdated = createEvent<FirebaseUser | null>()
-
-export const sessionGetSuccess = createEvent<User>()
-export const sessionFailure = createEvent()
-
-export const subscribeSessionFx = createEffect({
-  handler: async () => {
-    return onAuthStateChanged(getAuth(), sessionUpdated)
-  },
-})
+export const logOut = createEvent()
+export const sessionChanged = createEvent<FirebaseUser | null>()
 
 export const sessionDeleteFx = createEffect({
-  handler: async () => {
-    await getAuth().signOut()
-  },
+  handler: async () => getAuth().signOut(),
+})
+export const subscribeSessionFx = createEffect({
+  handler: async () => onAuthStateChanged(getAuth(), sessionChanged),
 })
 
-sample({
-  clock: redirectSessionFailure,
-  fn: () => ({}),
-  target: routes.login.open,
+export const { sessionEstablished, __: sessionFailed } = split(sessionChanged, {
+  sessionEstablished: (user): user is FirebaseUser => Boolean(user),
 })
 
-sample({
-  clock: appStarted,
-  target: subscribeSessionFx,
-})
+export const $currentUser = createStore<User | null>(null).reset(sessionDeleteFx.done)
 
+sample({ clock: appStarted, target: subscribeSessionFx })
+
+// TODO fix later...
 sample({
-  clock: sessionUpdated,
-  filter: Boolean,
+  clock: sessionEstablished,
   fn: (user) => ({
     uid: user.uid,
     fullname: user.displayName ?? 'no name',
     email: user.email ?? '',
     photoUrl: user.photoURL ?? '',
-    description: '',
   }),
-  target: sessionGetSuccess,
+  target: $currentUser,
 })
 
-sample({
-  clock: sessionUpdated,
-  filter: (session) => session === null,
-  target: sessionFailure,
+redirect({
+  clock: sessionFailed,
+  route: routes.login,
 })
 
-export const logout = createEvent()
+sample({ clock: logOut, target: sessionDeleteFx })
 
-export const $currentUser = createStore<User | null>(null)
-  .on(sessionGetSuccess, (_, user) => user)
-  .reset(sessionDeleteFx.done, sessionFailure)
-export const $isAuthenticated = $currentUser.map(Boolean)
+sample({ clock: sessionDeleteFx.done, target: routes.login.open })
 
 sample({
   clock: $currentUser,
@@ -70,54 +54,4 @@ sample({
   target: setUidForRequest,
 })
 
-persist({
-  store: $currentUser,
-  key: 'current-user',
-})
-
-sample({
-  clock: logout,
-  filter: sessionDeleteFx.pending.map((pending) => !pending),
-  target: sessionDeleteFx,
-})
-
-export const checkAuthenticated = <T>(config: {
-  when: Unit<T>
-  if: 'authorized' | 'anonymous'
-  then: Unit<T | void>
-  else?: Unit<T | void>
-}) => {
-  const elseLogic = config.else ?? createEvent()
-
-  const checkIsAuthenticated = config.if === 'authorized'
-
-  if (checkIsAuthenticated) {
-    sample({
-      source: config.when,
-      filter: $isAuthenticated,
-      fn: () => {},
-      target: config.then,
-    })
-
-    sample({
-      source: config.when,
-      filter: $isAuthenticated.map((is) => !is),
-      fn: () => {},
-      target: elseLogic,
-    })
-  } else {
-    sample({
-      source: config.when,
-      filter: $isAuthenticated,
-      fn: () => {},
-      target: elseLogic,
-    })
-
-    sample({
-      source: config.when,
-      filter: $isAuthenticated.map((is) => !is),
-      fn: () => {},
-      target: config.then,
-    })
-  }
-}
+persist({ store: $currentUser, key: 'current-user' })

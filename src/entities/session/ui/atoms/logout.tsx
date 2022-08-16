@@ -1,26 +1,20 @@
-import { Text } from '@geist-ui/core'
+import { Button, Text } from '@geist-ui/core'
 import { LogOut } from '@geist-ui/icons'
 import { css } from '@linaria/core'
-import { Link } from 'atomic-router-react'
 import { createEvent, sample } from 'effector'
-import { routes } from '~/shared/routes'
-import { logout } from '../../model'
+import { logOut } from '../../model'
 
-export const logoutClicked = createEvent()
+export const logoutClicked = createEvent<React.MouseEvent<HTMLButtonElement, MouseEvent>>()
 
-sample({
-  clock: logoutClicked,
-  target: logout,
-})
+sample({ clock: logoutClicked, target: logOut })
 
 export const Logout = () => {
   return (
-    <Link to={routes.login} onClick={() => logoutClicked()} className={linkClasses}>
-      <LogOut />
+    <Button type="abort" icon={<LogOut />} onClick={logoutClicked} className={linkClasses}>
       <Text span data-element="text">
         Sign out
       </Text>
-    </Link>
+    </Button>
   )
 }
 

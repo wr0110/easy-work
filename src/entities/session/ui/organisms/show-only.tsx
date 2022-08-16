@@ -1,6 +1,6 @@
 import { useStore } from 'effector-react'
 import { FC } from 'react'
-import { $isAuthenticated } from '../../model'
+import { $isAuthenticated } from '../../hooks'
 
 interface Props {
   when: 'authorized' | 'anonymous'

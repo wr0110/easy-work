@@ -3,7 +3,7 @@ import { Text, Link, Spacer, Divider } from '@geist-ui/core'
 import { Github, Globe, Twitter } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
 import { sample } from 'effector'
-import { checkAuthenticated } from '~/entities/session'
+import { authorizedChain } from '~/entities/session/hooks'
 import { authenticationWithGithubFx, githubAuthClicked } from '~/features/auth/auth-by-github'
 import { authenticationWithGoogleFx, googleAuthClicked } from '~/features/auth/auth-by-google'
 import { authenticationWithTwitterFx, twitterAuthClicked } from '~/features/auth/auth-by-twitter'
@@ -11,11 +11,7 @@ import { routes } from '~/shared/routes'
 import { ButtonControl, PageContentCentred } from '~/shared/ui'
 import { Header } from './ui'
 
-checkAuthenticated({
-  when: routes.login.opened,
-  if: 'authorized',
-  then: routes.workspace.open,
-})
+export const authenticatedRoute = authorizedChain(routes.login)
 
 sample({
   clock: [
@@ -25,6 +21,8 @@ sample({
   ],
   target: routes.workspace.open,
 })
+
+sample({ clock: authenticatedRoute.opened, target: routes.workspace.open })
 
 export const Login = () => {
   return (

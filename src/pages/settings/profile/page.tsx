@@ -3,18 +3,10 @@ import { Menu } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
 import { useStore } from 'effector-react'
 import { useCallback, useState } from 'react'
-import { checkAuthenticated, redirectSessionFailure } from '~/entities/session'
 import { $theme } from '~/features/theme'
 import { UserEditForm } from '~/features/user/edit/ui'
-import { routes } from '~/shared/routes'
 import { Sidebar } from '~/widgets/sidebar'
 import { SettingsMenu } from '~/widgets/sidebar/settings-menu'
-
-checkAuthenticated({
-  when: routes.user.edit.opened,
-  if: 'anonymous',
-  then: redirectSessionFailure,
-})
 
 export const Settings = () => {
   // @fix 1023px media
