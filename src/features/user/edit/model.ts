@@ -1,12 +1,10 @@
-import { createRoute } from 'atomic-router'
 import { combine, createEvent, createStore, sample } from 'effector'
 import { every, spread } from 'patronum'
 import { $currentUser } from '~/entities/session'
 import { uploadAvatarProfileFx, updateUserProfileFx } from '~/shared/api/requests'
 import { showMessage } from '~/shared/lib/toast'
+import { routes } from '~/shared/routes'
 import { validateDescription, validateEmail, validateFullname } from './library'
-
-export const userEditRoute = createRoute()
 
 export const fullnameChanged = createEvent<string>()
 export const descriptionChanged = createEvent<string>()
@@ -23,7 +21,7 @@ export const $file = createStore<File | null>(null).on(avatarChanged, (_, file) 
 export const formSubmitted = createEvent()
 
 sample({
-  clock: userEditRoute.opened,
+  clock: routes.user.edit.opened,
   source: $currentUser,
   filter: Boolean,
   target: spread({

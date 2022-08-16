@@ -5,6 +5,7 @@ import type { User as FirebaseUser } from 'firebase/auth'
 import type { User } from '~/shared/api/requests'
 import { setUidForRequest } from '~/shared/api/requests/request'
 import { appStarted } from '~/shared/config/run-logic'
+import { routes } from '~/shared/routes'
 
 export const redirectSessionFailure = createEvent()
 
@@ -23,6 +24,12 @@ export const sessionDeleteFx = createEffect({
   handler: async () => {
     await getAuth().signOut()
   },
+})
+
+sample({
+  clock: redirectSessionFailure,
+  fn: () => ({}),
+  target: routes.login.open,
 })
 
 sample({
