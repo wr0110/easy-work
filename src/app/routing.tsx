@@ -1,22 +1,13 @@
 import { createHistoryRouter } from 'atomic-router'
 import { sample } from 'effector'
-import { redirectSessionFailure } from '~/entities/session'
-import { notFoundRoute } from '~/pages/error-not-found/route'
-import { loginRoute } from '~/pages/login/route'
-import { routes } from '~/pages/routes-list'
-import { history } from '~/shared/lib/routing-history'
+import { notFoundRoute, routesMap } from '~/pages'
+import { history } from '~/shared/lib/history'
 
 export const router = createHistoryRouter({
-  routes,
+  routes: routesMap,
 })
 
 router.setHistory(history)
-
-sample({
-  clock: redirectSessionFailure,
-  fn: () => ({}),
-  target: loginRoute.open,
-})
 
 sample({
   clock: router.routeNotFound,

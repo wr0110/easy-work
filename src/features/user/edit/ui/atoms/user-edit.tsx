@@ -1,11 +1,11 @@
 import { Settings } from '@geist-ui/icons'
 import { css } from '@linaria/core'
 import { Link } from 'atomic-router-react'
-import { userEditRoute } from '~/features/user/edit'
+import { routes } from '~/shared/routes'
 
 export const UserEdit = () => {
   return (
-    <Link to={userEditRoute} className={linkClasses}>
+    <Link to={routes.user.edit} className={linkClasses}>
       <span data-element="icon">
         <Settings />
       </span>

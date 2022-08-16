@@ -4,7 +4,7 @@ import { css } from '@linaria/core'
 import { styled } from '@linaria/react'
 import { useStore } from 'effector-react'
 import { $theme } from '~/features/theme'
-import { paths } from '~/shared/lib/paths'
+import { routes } from '~/shared/routes'
 import { CustomLink } from '~/shared/ui'
 import { SettingsMenu } from './settings-menu'
 
@@ -14,7 +14,7 @@ export const Sidebar = () => {
   return (
     <>
       <LeftMenu theme={theme} data-theme={theme.type}>
-        <CustomLink className={linkClasses} iconLeft={<CornerUpLeft />} to={paths.workspace()}>
+        <CustomLink className={linkClasses} iconLeft={<CornerUpLeft />} to={routes.workspace}>
           Settings
         </CustomLink>
         <CollapseBar>

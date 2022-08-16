@@ -15,7 +15,7 @@ import { FC, useCallback, useState } from 'react'
 import { $currentUser } from '~/entities/session'
 import { showTaskForm } from '~/entities/task'
 import { FavoriteAdd } from '~/features/project/favorite/ui'
-import { projectRoute } from '../route'
+import { routes } from '~/shared/routes'
 
 const buttonClasses = css`
   z-index: 1500;
@@ -27,7 +27,7 @@ const buttonClasses = css`
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false)
-  const params = useStore(projectRoute.$params)
+  const params = useStore(routes.project.$params)
 
   const theme = useTheme()
   const mdDown = useMediaQuery('md', { match: 'down' })

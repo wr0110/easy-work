@@ -3,7 +3,12 @@ module.exports = function (api) {
   const isTests = api.env('test')
 
   const presets = [
-    ['@babel/preset-env', { modules: false }],
+    [
+      '@babel/preset-env',
+      {
+        modules: false,
+      },
+    ],
     '@babel/preset-typescript',
     ['@babel/preset-react', { runtime: 'automatic' }],
     '@linaria',
@@ -16,6 +21,7 @@ module.exports = function (api) {
         factories: ['src/shared/api/requests/request', '~/shared/api/requests/request'],
       },
     ],
+    '@babel/plugin-transform-runtime',
   ]
 
   if (isProduction) {
@@ -50,7 +56,6 @@ module.exports = function (api) {
   if (isTests) {
     plugins.push(
       ...[
-        '@babel/plugin-transform-runtime',
         '@babel/plugin-transform-modules-commonjs',
         [
           'module-resolver',

@@ -3,7 +3,7 @@ import { LogOut } from '@geist-ui/icons'
 import { css } from '@linaria/core'
 import { Link } from 'atomic-router-react'
 import { createEvent, sample } from 'effector'
-import { paths } from '~/shared/lib/paths'
+import { routes } from '~/shared/routes'
 import { logout } from '../../model'
 
 export const logoutClicked = createEvent()
@@ -15,7 +15,7 @@ sample({
 
 export const Logout = () => {
   return (
-    <Link to={paths.login()} onClick={() => logoutClicked()} className={linkClasses}>
+    <Link to={routes.login} onClick={() => logoutClicked()} className={linkClasses}>
       <LogOut />
       <Text span data-element="text">
         Sign out
