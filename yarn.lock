@@ -3511,17 +3511,17 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-atomic-router-react@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/atomic-router-react/-/atomic-router-react-0.4.3.tgz#469f364ee8298c200f77813a693e81d04f1d55cf"
-  integrity sha512-LXM34xu97PX4408Av+JeaVlbCmJCXDhleAkWKhkin7w75Mk3jFdmB5Ma5dwNLnKYgAcB7uW6YnDpheYxjQiAdA==
+atomic-router-react@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/atomic-router-react/-/atomic-router-react-0.6.2.tgz#f19c682b78b4d6d5407896e631fd675dff4204fe"
+  integrity sha512-BtOTMBD5ZlEBwF7Zhqzvinz2lm9IvwsD5lvwH4QQgWkfvQIMd+fpoXw7YA0KrQqoSjCsNR4ole6m4YIO98/6QA==
   dependencies:
     clsx "^1.1.1"
 
-atomic-router@^0.5.0-dev.1:
-  version "0.5.0-dev.1"
-  resolved "https://registry.yarnpkg.com/atomic-router/-/atomic-router-0.5.0-dev.1.tgz#5d13537f59661e7b3e38067332f1e61b612db245"
-  integrity sha512-zjK5pYAKgA8kmRslf0Sh36/rtjam0CBIyFkRvMnNVKgkqa26tT4xPj6j/k6GtgYbtAS3P1ZldY8s/j69EUudnQ==
+atomic-router@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/atomic-router/-/atomic-router-0.6.1.tgz#52f29b967e225a71f772aaf8239d069643e310ff"
+  integrity sha512-2JB13flCcZbf+P5Ri80XP8FGen9+87bwsB8/+ioanERKGM5vh9b0/SwOc+kCfYA+eOdutGhGaCHsHMEq/3+ERQ==
   dependencies:
     path-to-regexp "^6.2.0"
 
@@ -5269,20 +5269,22 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
-effector-react@^22.0.6:
-  version "22.0.6"
-  resolved "https://registry.yarnpkg.com/effector-react/-/effector-react-22.0.6.tgz#e6651febfc124a8adf550deb950fbd03dfb9ec4e"
-  integrity sha512-uzVjrh5S94eMeihu8N8eQvLFnZA56VT00etMVovnSyZxujo0f8gtZZebIYOKyYFkGcYUyfiOHRRzBhYpIfAIhg==
+effector-react@^22.1.6:
+  version "22.1.6"
+  resolved "https://registry.yarnpkg.com/effector-react/-/effector-react-22.1.6.tgz#51d68c23dc62aebf964da5e641a14831d7aa927d"
+  integrity sha512-1+kjtjX62tm3upJBQvsFGm6Sp+5po8j1OEWmkllSw4e8Kg1XampD5gqSRlGt9s9iJxtNl1oZoDiTxKyF5EoKtw==
+  dependencies:
+    use-sync-external-store "^1.0.0"
 
 effector-storage@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/effector-storage/-/effector-storage-5.0.0.tgz#49d2eb1e21983967b9ccb7163b2e4d5a27eb1be4"
   integrity sha512-zRnwaBzjNXAJBlR3/ovpsND1g+trEKN7szbyuIZ1s3LhL3t/wCzgXOjA/ss6Z+p2ekbPblpiRLcrBtIdpZJhMg==
 
-effector@^22.2.0:
-  version "22.2.0"
-  resolved "https://registry.yarnpkg.com/effector/-/effector-22.2.0.tgz#61667313cbe4fddeb9983582c3b59e1aae3603ec"
-  integrity sha512-N0dDgEO3/b9InYkPsoSM5YSJgVwJ1bQ/DWHU7C6sm9+L1CrT6gat0pLvey/ljFPNdNKL0S6MW5DEmDUvzJe1Ng==
+effector@^22.3.0:
+  version "22.3.0"
+  resolved "https://registry.yarnpkg.com/effector/-/effector-22.3.0.tgz#c743dd7d934ec3f9a2efac76a563cd0281bc4201"
+  integrity sha512-Nh7IXn8U4emq8YtAZf2+y2Rs6n4W/gjPaNZpZLFOXOIAsRZSNBFjtK1vHTWNKxxmNFZOaZN6XUXdT8FDs0mAdQ==
 
 electron-to-chromium@^1.4.17:
   version "1.4.57"
@@ -9790,9 +9792,9 @@ path-to-regexp@^1.8.0:
     isarray "0.0.1"
 
 path-to-regexp@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-6.2.0.tgz#f7b3803336104c346889adece614669230645f38"
-  integrity sha512-f66KywYG6+43afgE/8j/GoiNyygk/bnoCbps++3ErRKsIYkGGupyv07R2Ok5m9i67Iqc+T2g1eAUGUPzWhYTyg==
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-6.2.1.tgz#d54934d6798eb9e5ef14e7af7962c945906918e5"
+  integrity sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==
 
 path-type@^3.0.0:
   version "3.0.0"
@@ -12100,6 +12102,11 @@ url-parse-lax@^3.0.0:
   integrity sha1-FrXK/Afb42dsGxmZF3gj1lA6yww=
   dependencies:
     prepend-http "^2.0.0"
+
+use-sync-external-store@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"

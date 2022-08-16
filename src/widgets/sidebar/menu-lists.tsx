@@ -1,5 +1,4 @@
 import { Monitor, User } from '@geist-ui/icons'
-import { paths } from '~/shared/lib/paths'
 
 export const menuSettings = [
   {
@@ -10,7 +9,6 @@ export const menuSettings = [
       </>
     ),
     items: [
-      { name: 'Profile', href: paths.userEdit() },
       { name: 'Preferences', href: 'not/implemented' },
       { name: 'Notifications', href: 'not-implemented' },
     ],
