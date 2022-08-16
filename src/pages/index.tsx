@@ -23,6 +23,7 @@ export const routesMap = [
   { path: '/project/:id', route: routes.project },
   { path: '/workspace', route: routes.workspace },
   { path: '/login', route: routes.login },
+  { path: '/error-404', route: routes.errors.notFound },
 ]
 
 export const notFoundRoute = routes.errors.notFound
