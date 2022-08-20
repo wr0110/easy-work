@@ -25,7 +25,7 @@ export const showToastFx = attach({
 })
 
 export const showMessage = <T>(config: { when: Unit<T>; toast: (settings: T) => ToastInput }) => {
-  sample({
+  return sample({
     clock: config.when,
     fn: config.toast,
     target: showToastFx,
