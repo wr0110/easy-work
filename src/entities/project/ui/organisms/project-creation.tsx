@@ -5,8 +5,8 @@ import { styled } from '@linaria/react'
 import { useStore } from 'effector-react'
 import { FC } from 'react'
 import { DragUpload } from '~/shared/ui'
-import { $photoUrl, $saveProjectLoading, formSubmitted, photo, photoUploaded } from '../../model'
-import { ChoiceTag, DescriptionField, TitleField } from '../atoms'
+import { $photoUrl, $saveProjectLoading, formSubmitted, photoUploaded } from '../../model'
+import { DescriptionField, TitleField } from '../atoms'
 
 interface Props {
   visible: boolean
@@ -15,14 +15,12 @@ interface Props {
 
 export const ProjectCreationForm: FC<Props> = ({ visible, close }) => {
   return (
-    <Modal height="870px" width="800px" visible={visible} onClose={close}>
+    <ModalStyled height="870px" width="800px" visible={visible} onClose={close}>
       <Modal.Title>Mirio</Modal.Title>
       <Modal.Content>
         <TitleField />
         <Spacer h={1.2} />
         <DescriptionField />
-        <Spacer h={1.2} />
-        <ChoiceTag />
         <Spacer h={1.2} />
         <PhotoUploadPreview />
       </Modal.Content>
@@ -35,7 +33,7 @@ export const ProjectCreationForm: FC<Props> = ({ visible, close }) => {
           <Submitted>submit</Submitted>
         </ButtonGroup>
       </ModalActions>
-    </Modal>
+    </ModalStyled>
   )
 }
 
@@ -68,14 +66,16 @@ const Submitted = reflect({
   },
 })
 
+const ModalStyled = styled(Modal)`
+  position: relative;
+`
+
 const ModalActions = styled.div`
-  overflow: hidden;
-  width: 100%;
-  padding-top: 11rem;
+  position: fixed;
+  bottom: 20px;
 `
 
 const ButtonGroup = styled.div`
-  margin-top: 2rem;
   display: flex;
   justify-content: flex-end;
 `
