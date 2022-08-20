@@ -25,7 +25,7 @@ export const BoardsBaseStructs: FC<{ extra?: ReactNode }> = ({ extra }) => {
   const boards = useStore($taskLifecycle)
 
   const touchSensor = useSensor(TouchSensor)
-  //issue https://github.com/clauderic/dnd-kit/issues/355#issuecomment-874881817
+  // @check issue https://github.com/clauderic/dnd-kit/issues/355#issuecomment-874881817
   const mouseSensor = useSensor(MouseSensor, {
     activationConstraint: {
       tolerance: 0,
