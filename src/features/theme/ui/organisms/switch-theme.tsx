@@ -1,4 +1,4 @@
-import { Text, GeistUIThemes, useTheme } from '@geist-ui/core'
+import { GeistUIThemes, Text, useTheme } from '@geist-ui/core'
 import { Moon, Sun } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
 import { themeToggled } from '../../model'

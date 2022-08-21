@@ -1,7 +1,7 @@
 import { combine, createEvent, createStore, sample } from 'effector'
 import { every, spread } from 'patronum'
 import { $currentUser } from '~/entities/session'
-import { uploadAvatarProfileFx, updateUserProfileFx } from '~/shared/api/requests'
+import { updateUserProfileFx, uploadAvatarProfileFx } from '~/shared/api/requests'
 import { showMessage } from '~/shared/lib/toast'
 import { routes } from '~/shared/routes'
 import { validateDescription, validateEmail, validateFullname } from './library'

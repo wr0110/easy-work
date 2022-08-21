@@ -71,7 +71,7 @@ const Sidebar: FC<{ isOpen: boolean; onClose(): void }> = ({ isOpen, onClose }) 
   const handleClick = useCallback(() => {
     onClose()
     showTaskForm()
-  }, [])
+  }, [onClose])
 
   return (
     <Drawer width="55%" visible={isOpen} placement="left" onClose={onClose}>

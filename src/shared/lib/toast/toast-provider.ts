@@ -1,4 +1,4 @@
-import { useToasts, ToastInput } from '@geist-ui/core'
+import { ToastInput, useToasts } from '@geist-ui/core'
 import { attach, createEvent, createStore, sample, Unit } from 'effector'
 import { useLayoutEffect } from 'react'
 
@@ -14,7 +14,7 @@ export const ToastProvider = () => {
 
   useLayoutEffect(() => {
     saveHandle(setToast)
-  }, [])
+  }, [setToast])
 
   return null
 }

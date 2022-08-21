@@ -5,10 +5,10 @@ import { baseAuthenticateFx } from '~/shared/api/requests'
 
 export const twitterAuthClicked = createEvent()
 
-export const twitterProvider = createStore(new TwitterAuthProvider())
+export const $twitterProvider = createStore(new TwitterAuthProvider())
 
 export const authenticationWithTwitterFx = attach({
-  source: twitterProvider,
+  source: $twitterProvider,
   effect: baseAuthenticateFx,
   mapParams: (_, provider) => ({ provider }),
 })

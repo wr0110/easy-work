@@ -1,5 +1,5 @@
 import { allSettled, fork } from 'effector'
-import { $theme, themeToggled, themeChoice } from '.'
+import { $theme, themeChoice, themeToggled } from '.'
 
 describe('theme', () => {
   it('toggle theme', async () => {

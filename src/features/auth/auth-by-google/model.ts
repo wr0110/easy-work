@@ -5,10 +5,10 @@ import { baseAuthenticateFx } from '~/shared/api/requests'
 
 export const googleAuthClicked = createEvent()
 
-export const googleProvider = createStore(new GoogleAuthProvider())
+export const $googleProvider = createStore(new GoogleAuthProvider())
 
 export const authenticationWithGoogleFx = attach({
-  source: googleProvider,
+  source: $googleProvider,
   effect: baseAuthenticateFx,
   mapParams: (_, provider) => ({ provider }),
 })

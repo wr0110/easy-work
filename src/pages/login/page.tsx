@@ -1,5 +1,5 @@
 import { reflect } from '@effector/reflect'
-import { Text, Link, Spacer, Divider } from '@geist-ui/core'
+import { Divider, Link, Spacer, Text } from '@geist-ui/core'
 import { Github, Globe, Twitter } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
 import { sample } from 'effector'

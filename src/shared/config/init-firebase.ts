@@ -18,14 +18,14 @@ export const initFirebase = <T extends FirebaseOptions>({ config }: { config: T 
     },
   })
 
-  const startFirebaseApp = attach({
+  const startFirebaseAppFx = attach({
     source: $credentials,
     effect: initFirebaseFx,
   })
 
   sample({
     source: run,
-    target: startFirebaseApp,
+    target: startFirebaseAppFx,
   })
 
   run()

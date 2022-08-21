@@ -5,8 +5,8 @@ import { createInput } from 'composable-forms/custom'
 import { createEvent, createStore, sample } from 'effector'
 import Joi from 'joi'
 import { parseToUrl } from '~/entities/project/lib'
-import { loadProjectsFx, projectCreateFx } from '~/shared/api/requests'
 import type { Project } from '~/shared/api/requests'
+import { loadProjectsFx, projectCreateFx } from '~/shared/api/requests'
 import { showMessage } from '~/shared/lib/toast'
 
 export const $saveProjectLoading = projectCreateFx.pending

@@ -47,7 +47,7 @@ export const BoardsBaseStructs: FC<{ extra?: ReactNode }> = ({ extra }) => {
         collisionDetection={closestCenter}
       >
         {Object.entries(boards).map(([board, tasks]) => (
-          <Grid sm={6} className={column} key={board}>
+          <Grid key={board} sm={6} className={column}>
             <Board amount={boards[board as Status].length} title={board} extra={extra}>
               <SortableContext items={flatTaskList(tasks)} strategy={verticalListSortingStrategy}>
                 {tasks.map((task) => (
@@ -114,8 +114,8 @@ export const TaskDraggable: FC<{ taskId: string }> = ({ taskId }) => {
   return (
     <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
       <TaskPreview
-        taskId={taskId}
         key={taskId}
+        taskId={taskId}
         title={task.title}
         description={task.description}
         labels={task.labels}

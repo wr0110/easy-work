@@ -16,8 +16,8 @@ export const focusFx = createEffect<RefObject<HTMLInputElement>, void>((ref) => 
 })
 
 sample({
-  source: $ref,
   clock: focusSearchField,
+  source: $ref,
   filter: (ref) => Boolean(ref.current),
   target: focusFx,
 })

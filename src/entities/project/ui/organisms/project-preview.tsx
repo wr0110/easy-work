@@ -1,4 +1,4 @@
-import { Card, Text, Image, useTheme } from '@geist-ui/core'
+import { Card, Image, Text, useTheme } from '@geist-ui/core'
 import { css } from '@linaria/core'
 import { styled } from '@linaria/react'
 import { Link } from 'atomic-router-react'

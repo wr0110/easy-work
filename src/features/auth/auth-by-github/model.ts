@@ -5,10 +5,10 @@ import { baseAuthenticateFx } from '~/shared/api/requests'
 
 export const githubAuthClicked = createEvent()
 
-export const githubProvider = createStore(new GithubAuthProvider())
+export const $githubProvider = createStore(new GithubAuthProvider())
 
 export const authenticationWithGithubFx = attach({
-  source: githubProvider,
+  source: $githubProvider,
   effect: baseAuthenticateFx,
   mapParams: (_, provider) => ({ provider }),
 })

@@ -1,6 +1,6 @@
-import { useKeenSlider, KeenSliderOptions } from 'keen-slider/react'
+import { KeenSliderOptions, useKeenSlider } from 'keen-slider/react'
 import { FC, useState } from 'react'
-import { SliderNavigation, NavigationSliderProps } from './slider-navigation'
+import { NavigationSliderProps, SliderNavigation } from './slider-navigation'
 
 type KeenParams = KeenSliderOptions<unknown, unknown> | undefined
 

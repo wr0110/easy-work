@@ -17,9 +17,9 @@ export const UserUploadImage: FC<Props> = ({ src, onChange }) => {
   return (
     <div>
       <Tooltip type="dark" text="Click to upload photo" placement="bottom" trigger="hover">
-        <label {...getRootProps()}>
+        <span {...getRootProps()}>
           <Avatar src={src} scale={7.6} />
-        </label>
+        </span>
         <input {...getInputProps()} />
       </Tooltip>
     </div>

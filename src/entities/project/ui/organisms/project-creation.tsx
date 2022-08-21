@@ -1,5 +1,5 @@
 import { reflect } from '@effector/reflect'
-import { Button, Divider, Modal, Spacer, Text, Image } from '@geist-ui/core'
+import { Button, Divider, Image, Modal, Spacer, Text } from '@geist-ui/core'
 import { FilePlus } from '@geist-ui/icons'
 import { styled } from '@linaria/react'
 import { useStore } from 'effector-react'

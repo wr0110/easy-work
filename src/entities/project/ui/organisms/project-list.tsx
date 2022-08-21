@@ -24,7 +24,7 @@ export const ProjectList: FC<Props> = ({ projects, loading }) => {
   return (
     <ProjectsCarousel navigation={projects.length > 4}>
       {projects.map((project) => (
-        <PaperSlide className={paperSlideClasses} key={project.projectID}>
+        <PaperSlide key={project.projectID} className={paperSlideClasses}>
           <ProjectPreview project={project} />
         </PaperSlide>
       ))}

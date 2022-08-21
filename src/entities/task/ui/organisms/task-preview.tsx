@@ -75,7 +75,7 @@ export const TaskPreview = forwardRef<'div', Props>(
 const Labels = ({ labels }: { labels: Array<{ name: string; color: string }> }) => (
   <>
     {labels.map((label) => (
-      <Badge mr={0.4} style={{ backgroundColor: label.color }} key={label.name}>
+      <Badge key={label.name} mr={0.4} style={{ backgroundColor: label.color }}>
         {label.name}
       </Badge>
     ))}
