@@ -87,6 +87,9 @@
     "webpack-dev-server": "^4.7.3",
     "webpack-merge": "^5.8.0"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
