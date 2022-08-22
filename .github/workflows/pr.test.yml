@@ -1,14 +1,14 @@
 name: pull_request
 
-on: 
+on:
   pull_request:
     paths:
       - 'package.json'
       - 'yarn.lock'
       - 'src/**'
-      - 'babel.config.js' 
+      - 'babel.config.js'
 
-jobs: 
+jobs:
   pull_request:
     runs-on: ubuntu-latest
     steps:
@@ -16,7 +16,7 @@ jobs:
         - name: Install nodejs
           uses: actions/setup-node@v2
           with:
-            node-version: '14'
+            node-version: '18'
         - name: install dependencies
           run: yarn install --frozen-lockfile
         - name: run tests

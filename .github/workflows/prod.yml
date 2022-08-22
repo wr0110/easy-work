@@ -3,7 +3,7 @@ name: Deploy to firebase hosting
 on:
   push:
     branches: [master]
-    
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,7 +14,7 @@ jobs:
       - name: Install nodejs
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '18'
 
       - run: yarn install --frozen-lockfile
 
