@@ -5,11 +5,11 @@ import { useStore } from 'effector-react'
 import { useCallback, useState } from 'react'
 import { $theme } from '~/features/theme'
 import { UserEditForm } from '~/features/user/edit/ui'
+import { breakpoints } from '~/shared/lib/breakpoints'
 import { Sidebar } from '~/widgets/sidebar'
 import { SettingsMenu } from '~/widgets/sidebar/settings-menu'
 
 export const Settings = () => {
-  // @fix 1023px media
   const tableScreen = useMediaQuery('md', { match: 'down' })
   return (
     <Container>
@@ -66,7 +66,7 @@ const SidebarColumn = styled.div`
   flex-basis: 25%;
   display: inherit;
 
-  @media (max-width: 1023px) {
+  ${breakpoints.laptop} {
     position: absolute;
     top: 0;
     left: -500px;
@@ -80,7 +80,7 @@ const ContentColumn = styled.div`
   flex-basis: 85%;
   display: inherit;
 
-  @media (max-width: 1023px) {
+  ${breakpoints.laptop} {
     max-width: none;
     flex-basis: auto;
   }
@@ -93,7 +93,7 @@ const MainContent = styled.main`
     margin: 5rem auto 0;
     max-width: 42rem;
 
-    @media (max-width: 1023px) {
+    ${breakpoints.laptop} {
       max-width: none;
       padding: 0 2rem;
     }
