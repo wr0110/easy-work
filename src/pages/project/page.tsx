@@ -3,7 +3,7 @@ import { Loading, Modal, Spacer } from '@geist-ui/core'
 import { useStore } from 'effector-react'
 import { $isOpenForm, hideTaskForm, taskSave } from '~/entities/task'
 import { Create, DescriptionField, TitleField } from '~/entities/task/ui'
-import { BoardsBaseStructs } from '~/features/task/control-task-lifecycle/ui'
+import { LifecycleStructBoards } from '~/features/task/control-task-lifecycle/ui'
 import { $pending } from './model'
 import { Header } from './ui/header'
 
@@ -19,7 +19,7 @@ const Content = () => {
   return (
     <>
       <Header />
-      <BoardsBaseStructs extra={<Create />} />
+      <LifecycleStructBoards extra={<Create />} />
       <CreateTaskModal />
     </>
   )

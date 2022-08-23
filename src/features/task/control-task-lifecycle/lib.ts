@@ -1,5 +1,5 @@
 import type { DragEndEvent, DragOverEvent, DragStartEvent } from '@dnd-kit/core'
-import { attach, createEvent, createStore, sample } from 'effector'
+import { attach, combine, createEvent, createStore, sample } from 'effector'
 import { splitMap } from 'patronum'
 import type { Status, TaskLifecycle } from '~/shared/api/requests'
 import { isDefined } from '~/shared/lib/type-guard'
@@ -29,6 +29,24 @@ export const createTaskLifeCycleState = () => {
     .on(initItems, (_, tasks) => tasks)
     .on(addItems, (prevTasks, tasks) => prevTasks.concat(tasks))
     .on(removeItem, (tasks, { taskId }) => tasks.filter((task) => task.taskId !== taskId))
+
+  const $idle = createStore<TaskLifecycle[]>([]).on($lifecycle, (_, tasks) =>
+    tasks.filter((task) => task.status === 'idle')
+  )
+
+  const $inProcessing = createStore<TaskLifecycle[]>([]).on($lifecycle, (_, tasks) =>
+    tasks.filter((task) => task.status === 'take')
+  )
+
+  const $completed = createStore<TaskLifecycle[]>([]).on($lifecycle, (_, tasks) =>
+    tasks.filter((task) => task.status === 'resolve')
+  )
+
+  const $taskLifecycle = combine({
+    idle: $idle,
+    take: $inProcessing,
+    resolve: $completed,
+  })
 
   const takeTaskFx = attach({
     source: $lifecycle,
@@ -122,9 +140,9 @@ export const createTaskLifeCycleState = () => {
     initItems,
     dragEnded,
     dragOver,
-    $lifecycle,
     removeItem,
     dragStarted,
+    $taskLifecycle,
     $activeItemId,
   }
 }
