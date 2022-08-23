@@ -1,1 +1,1 @@
-export * from './organisms'
+export { LifecycleStructBoards } from './structs-base'
