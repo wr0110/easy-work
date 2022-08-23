@@ -103,7 +103,8 @@ export const TaskDraggable: FC<{ taskId: string }> = ({ taskId }) => {
   const task = useStoreMap({
     store: $tasks,
     keys: [taskId],
-    fn: (tasks, [id]) => tasks[id] ?? { title: 'not found', description: 'not found' },
+    fn: (tasks, [id]) => tasks[id],
+    defaultValue: { title: 'not found', description: 'not found' },
   })
 
   const style: CSSProperties = {
