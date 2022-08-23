@@ -5,7 +5,7 @@ import {
   removeTaskFx,
   TaskLifecycle,
 } from '~/shared/api/requests'
-import { createTaskLifeCycleState } from './library'
+import { createTaskLifeCycleState } from './lib'
 
 export const taskLifecycleState = createTaskLifeCycleState()
 
