@@ -14,7 +14,7 @@ jobs:
       - name: Install nodejs
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '16'
       - name: Install dependencies
         run: npm install
       - name: started lint
